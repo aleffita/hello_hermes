@@ -9,7 +9,11 @@ static const char *code = R"(
 int main() {
     // You can Customize the runtime config here.
     auto runtimeConfig =
-            hermes::vm::RuntimeConfig::Builder().withIntl(false).build();
+            hermes::vm::RuntimeConfig::Builder()
+                .withIntl(false)
+                .withES6Class(true)
+                .withES6Promise(true)
+                .build();
 
     // Create the Hermes runtime.
     auto runtime = facebook::hermes::makeHermesRuntime(runtimeConfig);

@@ -27,6 +27,7 @@ include_directories("${hermes_SOURCE_DIR}/public")
 # Add Hermes library directories
 link_directories("${hermes_BINARY_DIR}/API/hermes")
 link_directories("${hermes_BINARY_DIR}/jsi")
+link_libraries(jsi)
 
 add_executable(hello_hermes main.cpp)
-target_link_libraries(hello_hermes hermesvm jsi)
+target_link_libraries(hello_hermes hermesvm)
